@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="bodyload()">
+
+    <header class="container-fluid d-flex justify-content-between bg-primary text-white p-2 mt-2">
+        <div>
+            <h3>Shopper.</h3>
+        </div>
+        <div>
+            <span class="me-2"><a href="javascript:navClicked('All')">HOME</span></a>
+            <span class="me-2"><a href="javascript:navClicked('electronics')">Electricity</span></a>
+            <span class="me-2"><a href="javascript:navClicked('jewelery')">Jellewery</span></a>
+            <span class="me-2"><a href="javascript:navClicked('men\'s clothing')">Men's Fashion</span></a>
+            <span class="me-2"><a href="javascript:navClicked('women\'s clothing')">Women's Fashion</span></a>
+        </div>
+        <div>
+            <span class="bi bi-person"></span>
+            <span class="bi bi-heart"></span>
+            <a href="#cart" onclick="showcartclick()" data-bs-toggle="modal"><span class="bi bi-cart3"></span><span class="badge bg-danger rounded-circle" id="lblcount">0</span></a>
+            <div class="modal" id="cart">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Your cart items</h2>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Preview</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+
+                            </table>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" onclick="paynow()">Proceed to pay</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+    <section class="row m-2">
+        <nav class="col-2">
+            <div>
+                <label for=""> Select Category</label>
+                <div>
+                    <select id="1sCategories" class="form-control" onchange="categorychange()">
+                       
+                    </select>
+                </div>
+            </div>
+        </nav>
+        <main class="col-10 d-flex flex-wrap wrap" style="height: 500px;"></main>
+    </section>
+
+
+    <script src="jquery.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+
+</html>
